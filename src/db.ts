@@ -4,10 +4,11 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const pool = new pg.Pool({
-  host: "localhost",
+  host: process.env.HOST,
   port: 5432,
-  user: "postgres",
-  database: "blog",
+  user: process.env.USR,
+  database: process.env.DB,
+  password: process.env.PASSWD,
 });
 
 export = pool;
